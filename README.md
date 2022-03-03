@@ -12,52 +12,30 @@ As a contributor, here are the guidelines we would like you to follow:
 
 ### <a name="submit-issue"></a> Submitting an Issue
 
-Before you submit an issue, please search the issue tracker. An issue for your problem might already exist and the discussion might inform you of workarounds readily available.
-
-We want to fix all the issues as soon as possible, but before fixing a bug, we need to reproduce and confirm it.
-In order to reproduce bugs, we require that you provide a minimal reproduction.
-Having a minimal reproducible scenario gives us a wealth of important information without going back and forth to you with additional questions.
-
-A minimal reproduction allows us to quickly confirm a bug (or point out a coding problem) as well as confirm that we are fixing the right problem.
-
-We require a minimal reproduction to save maintainers' time and ultimately be able to fix more bugs.
-Often, developers find coding problems themselves while preparing a minimal reproduction.
-We understand that sometimes it might be hard to extract essential bits of code from a larger codebase but we really need to isolate the problem before we can fix it.
-
-Unfortunately, we are not able to investigate / fix bugs without a minimal reproduction, so if we don't hear back from you, we are going to close an issue that doesn't have enough info to be reproduced.
-
-You can file new issues by selecting from our [new issue templates](https://github.com/angular/angular/issues/new/choose) and filling out the issue template.
-
 
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-1. Search [GitHub](https://github.com/angular/angular/pulls) for an open or closed PR that relates to your submission.
-   You don't want to duplicate existing efforts.
+1. Clone RN_App/MultiMedia.
 
-2. Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
-   Discussing the design upfront helps to ensure that we're ready to accept your work.
+    ```shell
+     git clone "ssh://jackchlin@gerritfih2.mobiledrivetech.com:29499/RN_App/MultiMedia"
+     ```
 
-3. Please sign our [Contributor License Agreement (CLA)](#cla) before sending PRs.
-   We cannot accept code without a signed CLA.
-   Make sure you author all contributed Git commits with email address associated with your CLA signature.
-
-4. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the angular/angular repo.
-
-5. In your forked repository, make your changes in a new git branch:
+2. In your cloned repository, make your changes in a new git branch:
 
      ```shell
      git checkout -b my-fix-branch master
      ```
 
-6. Create your patch, **including appropriate test cases**.
+3. Create your patch, TODO: **including appropriate test cases**.
 
-7. Follow our [Coding Rules](#rules).
+4. Follow our [Coding Rules](#rules).
 
-8. Run the full Angular test suite, as described in the [developer documentation][dev-doc], and ensure that all tests pass.
+5. TODO: Run the full test suite, as described in the [developer documentation][dev-doc], and ensure that all tests pass.
 
-9. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit).
+6. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit).
    Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
      ```shell
@@ -65,25 +43,24 @@ Before you submit your Pull Request (PR) consider the following guidelines:
      ```
     Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
 
-10. Push your branch to GitHub:
+7. Push your branch to Gerrit:
 
     ```shell
     git push origin my-fix-branch
     ```
 
-11. In GitHub, send a pull request to `angular:master`.
+8. In Gerrit, add reviewers.
 
-### Reviewing a Pull Request
+### Reviewing a Merge Request
 
-The Angular team reserves the right not to accept pull requests from community members who haven't been good citizens of the community. Such behavior includes not following the [Angular code of conduct](https://github.com/angular/code-of-conduct) and applies within or outside of Angular managed channels.
 
 #### Addressing review feedback
 
-If we ask for changes via code reviews then:
+If reviewers ask for changes via code reviews then:
 
 1. Make the required updates to the code.
 
-2. Re-run the Angular test suites to ensure tests are still passing.
+2. Re-run the test suites to ensure tests are still passing.
 
 3. Create a fixup commit and push to your GitHub repository (this will update your Pull Request):
 
@@ -91,10 +68,6 @@ If we ask for changes via code reviews then:
     git commit --all --fixup HEAD
     git push
     ```
-
-    For more info on working with fixup commits see [here](docs/FIXUP_COMMITS.md).
-
-That's it! Thank you for your contribution!
 
 
 ##### Updating the commit message
@@ -114,22 +87,18 @@ In order to update the commit message of the last commit on your branch:
     git commit --amend
     ```
 
-3. Push to your GitHub repository:
+3. Push to Gerrit repository:
 
     ```shell
     git push --force-with-lease
     ```
-
-> NOTE:<br />
-> If you need to update the commit message of an earlier commit, you can use `git rebase` in interactive mode.
-> See the [git docs](https://git-scm.com/docs/git-rebase#_interactive_mode) for more details.
 
 
 #### After your pull request is merged
 
 After your pull request is merged, you can safely delete your branch and pull the changes from the main (upstream) repository:
 
-* Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
+* Delete the remote branch on Gerrit either through the Gerrit web UI or your local shell as follows:
 
     ```shell
     git push origin --delete my-fix-branch
@@ -193,17 +162,24 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
 #### <a name="commit-header"></a>Commit Message Header
 
 ```
-<type>(<scope>): <short summary>
-  │       │             │
-  │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
-  │       │
-  │       └─⫸ Commit Scope: TODO
-  │
-  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test|chore
+[<story>][<task>>] <type>(<scope>): <short summary>
+                     │       │             │
+                     │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+                     │       │
+                     │       └─⫸ Commit Scope: TODO
+                     │
+                     └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test|chore
 ```
 
 The `<type>` and `<summary>` fields are mandatory, the `(<scope>)` field is optional.
 
+##### Story
+
+The story key in Jira.
+
+##### Task
+
+The task key in Jira.
 
 ##### Type
 
